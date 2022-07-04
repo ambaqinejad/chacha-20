@@ -16,7 +16,10 @@ public:
     ChaCha20Block(const uint8_t key[32], /* 32 ta 8 bits = 256 bits = 8 ta 32 bits */
                   const uint8_t nonce[8] /* 8 ta 8 bits = 64 bits = 2 ta 32 bits */);
     void setCounter(uint64_t counter);
+    void next(uint32_t result[16]);
+    void next(uint8_t keyStream[64]);
     static uint32_t pack4(const uint8_t *a);
+    static void unpack4(uint32_t src, uint8_t *destination);
 };
 
 

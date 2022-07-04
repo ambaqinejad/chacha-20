@@ -23,6 +23,8 @@ public:
     ChaCha20(const uint8_t key[32], /* 32 ta 8 bits = 256 bits = 8 ta 32 bits */
              const uint8_t nonce[8], /* 8 ta 8 bits = 64 bits = 2 ta 32 bits */
              uint64_t counter = 0 /* 64 bits = 2 ta 32 bits */);
+
+    void crypt(uint8_t *bytes, size_t n_bytes);
 };
 
 #endif //MY_CHACHA_20_CHACHA20_H
