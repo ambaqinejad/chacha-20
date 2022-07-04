@@ -34,7 +34,7 @@ void crypt(const char *textKey, //64 characters/512 bit
     Bytes plain = rawBytesToEncryptedBytes(strToBytes(plainText));
     ChaCha20 chaCha20(key.data(), nonce.data(), counter);
     Bytes result {plain};
-    chaCha20.crypt()
+    chaCha20.crypt(&result[0], result.size());
 }
 
 int main() {
