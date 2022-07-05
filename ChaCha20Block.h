@@ -11,7 +11,7 @@ class ChaCha20Block {
     // This is basically a random number generator seeded with key and nonce.
     // Generates 64 random bytes every time count is incremented.
 private:
-    uint32_t state_[16];
+    uint32_t state_[16]{};
 public:
     ChaCha20Block(const uint8_t key[32], /* 32 ta 8 bits = 256 bits = 8 ta 32 bits */
                   const uint8_t nonce[8] /* 8 ta 8 bits = 64 bits = 2 ta 32 bits */);

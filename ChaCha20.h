@@ -24,7 +24,8 @@ public:
              const uint8_t nonce[8], /* 8 ta 8 bits = 64 bits = 2 ta 32 bits */
              uint64_t counter = 0 /* 64 bits = 2 ta 32 bits */);
 
-    void crypt(uint8_t *bytes, size_t n_bytes);
+    uint8_t* crypt(uint8_t *bytes, size_t n_bytes);
+    void decrypt(uint8_t *bytes, size_t n_bytes, int threshhold);
 };
 
 #endif //MY_CHACHA_20_CHACHA20_H
